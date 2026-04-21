@@ -1,6 +1,7 @@
-from django.apps import AppConfig
+from django.urls import path
+from . import views
 
-
-class BooksConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'books'
+urlpatterns = [
+    path('home/', views.home, name='home'), 
+    path('detail_book/<int:book_id>/', views.detail_book, name='detail_book'), 
+]
